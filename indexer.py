@@ -34,7 +34,7 @@ def parse_data(lines, decode=False):
 
 
 def store_data(data):
-    with open('dist\\icon_list.json', 'w') as out:
+    with open('projects\\fluent-ui-icons-web\\src\\assets\\icon_list.json', 'w') as out:
         json_data = json.dumps(data) 
         out.write(json_data)
 

@@ -1,0 +1,168 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "fluent-ui-icons": {
+      "projectType": "library",
+      "root": "projects/fluent-ui-icons",
+      "sourceRoot": "projects/fluent-ui-icons/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/fluent-ui-icons/tsconfig.lib.json",
+            "project": "projects/fluent-ui-icons/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/fluent-ui-icons/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fluent-ui-icons/src/test.ts",
+            "tsConfig": "projects/fluent-ui-icons/tsconfig.spec.json",
+            "karmaConfig": "projects/fluent-ui-icons/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fluent-ui-icons/tsconfig.lib.json",
+              "projects/fluent-ui-icons/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "fluent-ui-icons-web": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/fluent-ui-icons-web",
+      "sourceRoot": "projects/fluent-ui-icons-web/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/fluent-ui-icons-web",
+            "index": "projects/fluent-ui-icons-web/src/index.html",
+            "main": "projects/fluent-ui-icons-web/src/main.ts",
+            "polyfills": "projects/fluent-ui-icons-web/src/polyfills.ts",
+            "tsConfig": "projects/fluent-ui-icons-web/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/fluent-ui-icons-web/src/favicon.ico",
+              "projects/fluent-ui-icons-web/src/assets"
+            ],
+            "styles": [
+              "projects/fluent-ui-icons-web/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/fluent-ui-icons-web/src/environments/environment.ts",
+                  "with": "projects/fluent-ui-icons-web/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "fluent-ui-icons-web:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "fluent-ui-icons-web:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "fluent-ui-icons-web:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fluent-ui-icons-web/src/test.ts",
+            "polyfills": "projects/fluent-ui-icons-web/src/polyfills.ts",
+            "tsConfig": "projects/fluent-ui-icons-web/tsconfig.spec.json",
+            "karmaConfig": "projects/fluent-ui-icons-web/karma.conf.js",
+            "assets": [
+              "projects/fluent-ui-icons-web/src/favicon.ico",
+              "projects/fluent-ui-icons-web/src/assets"
+            ],
+            "styles": [
+              "projects/fluent-ui-icons-web/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fluent-ui-icons-web/tsconfig.app.json",
+              "projects/fluent-ui-icons-web/tsconfig.spec.json",
+              "projects/fluent-ui-icons-web/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/fluent-ui-icons-web/e2e/protractor.conf.js",
+            "devServerTarget": "fluent-ui-icons-web:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "fluent-ui-icons-web:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "fluent-ui-icons"
+}
