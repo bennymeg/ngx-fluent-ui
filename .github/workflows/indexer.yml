@@ -1,0 +1,29 @@
+    name: fluent-ui-icons-db
+    
+    on:
+      schedule:
+        - cron: "0 0 * * 6"                                   # runs at 00:00 UTC every sunday
+    
+    jobs:
+      fluent-ui-icons-indexer:
+        runs-on: ubuntu-latest
+    
+        steps:
+          - name: checkout repo content
+            uses: actions/checkout@v2                         # checkout the repository content to github runner.
+
+          - name: setup python
+            uses: actions/setup-python@v2
+            with:
+              python-version: 3.8                             # install python
+
+          - name: index icons                                 # run the indexer python script
+            run: |
+              python indexer.py
+
+          - uses: stefanzweifel/git-auto-commit-action@v4     # commit changes
+            with:
+              commit_message: Updated icons DB
+              commit_user_name: Benny Bot
+              commit_user_email: bennymegk@gmail.com
+              commit_author: bennymeg <bennymegk@gmail.com>
