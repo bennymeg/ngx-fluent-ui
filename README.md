@@ -1,6 +1,25 @@
-# Ngx Fluent UI
+<p align="center">
+    <img src="https://github.com/bennymeg/ngx-fluent-ui/blob/master/docs/assets/logo.png?raw=true" width="128px"> 
+</p>
 
-**Icon Library**: https://bennymeg.github.io/ngx-fluent-ui/ .
+<div align="center">
+
+# Angular Fluent UI
+
+This package provides the Fluent UI System Icons as optimized plain svg assets.
+
+**Icon Library**: https://bennymeg.github.io/ngx-fluent-ui/
+</div>
+
+<hr></br>
+
+## Installation
+
+```bash
+npm install ngx-fluent-ui
+```
+
+
 
 <!-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
