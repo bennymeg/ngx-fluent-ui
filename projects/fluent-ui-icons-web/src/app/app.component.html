@@ -1,6 +1,6 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img width="40" alt="Logo" src="../assets/fluent.png"/>
+  <img width="40" alt="Logo" src="/assets/fluent.png"/>
 
   <span>Fluent UI Icon Library</span>
   <div class="spacer"></div>
@@ -13,7 +13,7 @@
     <div *ngFor="let icon of iconList | keyvalue" class="card card-small" class="card card-small" style="margin-bottom: 8px;">
       <!-- Icon -->
       <div style="display: flex; flex: 1 1 1; width: 20%; justify-content: center; align-items: center;">
-        <img class="fluent-icons" defaultImage="../assets/spinner.gif" [lazyLoad]="icon.value.link" width="24" height="24">
+        <img class="fluent-icons" defaultImage="/assets/spinner.gif" [lazyLoad]="icon.value.link" width="24" height="24">
       </div>
 
       <!-- Info -->
