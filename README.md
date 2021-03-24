@@ -1,5 +1,7 @@
 # Ngx Fluent UI
 
+**Icon Library**: https://bennymeg.github.io/ngx-fluent-ui/ .
+
 <!-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
 ## Development server
