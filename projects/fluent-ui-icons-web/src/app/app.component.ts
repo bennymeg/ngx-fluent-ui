@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import iconList from '../assets/icon_list.json';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fluent-ui-icons-web';
+  title = 'Fluent UI Icon Library';
+  iconList = iconList;
 }
