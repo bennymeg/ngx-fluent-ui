@@ -12,6 +12,7 @@ FLUENT_UI_RAW_MASTER_BRANCH = 'https://raw.githubusercontent.com/microsoft/fluen
 def parse_data(lines, decode=False):
     is_table_reached = False
     icons_dict = dict()
+    icons_library = ''
 
     for line in lines:
         if decode:
@@ -25,34 +26,44 @@ def parse_data(lines, decode=False):
             entry['name'] = name_split[0]
             entry['style'] = name_split[1].strip(')')
             entry['link'] = "{}/{}".format(FLUENT_UI_RAW_MASTER_BRANCH, line_split[1].split("\"")[1].replace(' ', '%20'))
-            entry['sizes'] = re.findall(r"\d\d", line_split[2])
+            entry['sizes'] = [re.sub(r'_[rf]', '', size) for size in re.findall(r"\d\d_[rf]", line_split[3])]
+
             icons_dict[line_split[0]] = entry
+            for size in entry['sizes']:
+                name = "{}_{}_{}".format(entry['name'].lower().replace(' ', '_'), size, entry['style'].lower())
+                icons_library += "export const {} = require('@fluentui/svg-icons/icons/{}.svg');\n".format(name, name)
         elif '|---|---|---|---|' in line:
             is_table_reached = True
     
-    return icons_dict
+    return icons_dict, icons_library
 
 
-def store_data(data):
-    with open('docs\\assets\\icon_list.json', 'w') as out:
-        json_data = json.dumps(data) 
-        out.write(json_data)
+def store_data(dictionary, library):
+    if dictionary is not None:
+        with open('docs\\assets\\icon_list.json', 'w') as out:
+            json_data = json.dumps(dictionary) 
+            out.write(json_data)
 
-    with open('projects\\fluent-ui-icons-web\\src\\assets\\icon_list.json', 'w') as out:
-        json_data = json.dumps(data) 
-        out.write(json_data)
+        with open('projects\\fluent-ui-icons-web\\src\\assets\\icon_list.json', 'w') as out:
+            json_data = json.dumps(dictionary) 
+            out.write(json_data)
+
+    if library is not None:
+        with open('projects\\fluent-ui-icons\\library\\icons.library.ts', 'w') as out:
+            out.write(library)
 
 
 if __name__ == "__main__":
-    data = None
+    dictionary = None
+    library = None
 
     if (DEVELOPMENT):
         with open('test\\icon_list.md', 'r') as f:
-            parse_data(f)
+            dictionary, library = parse_data(f)
     else:
         with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/icons.md') as html:
             lines = html.readlines()
-            parse_data(lines, decode=True)
+            dictionary, library = parse_data(lines, decode=True)
 
-    if data is not None:
-        store_data(data)
+    if dictionary is not None or library is not None:
+        store_data(dictionary, library)
