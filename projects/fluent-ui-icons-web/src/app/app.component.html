@@ -3,26 +3,43 @@
   <img width="40" alt="Logo" src="assets/fluent.png"/>
 
   <span>Fluent UI Icon Library</span>
+  
   <div class="spacer"></div>
+
+  <div class="input">
+    <input #search type="text" id="input" class="search" placeholder="Search..." 
+      (enter)="updateFilter($event)" (change)="updateFilter($event)">
+  
+    <span class="search-button circle" style="margin-top: 8px" >
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.5 3C11.5376 3 14 5.46243 14 8.5C14 9.83879 13.5217 11.0659 12.7266 12.0196L16.8536 16.1464C17.0488 16.3417 17.0488 16.6583 16.8536 16.8536C16.68 17.0271 16.4106 17.0464 16.2157 16.9114L16.1464 16.8536L12.0196 12.7266C11.0659 13.5217 9.83879 14 8.5 14C5.46243 14 3 11.5376 3 8.5C3 5.46243 5.46243 3 8.5 3ZM8.5 4C6.01472 4 4 6.01472 4 8.5C4 10.9853 6.01472 13 8.5 13C10.9853 13 13 10.9853 13 8.5C13 6.01472 10.9853 4 8.5 4Z" fill="#212121"/>
+      </svg>
+    </span>
+  </div>
 </div>
 
 <!-- Content -->
 <div class="content" role="main">
   <div class="card-container">
     <!-- Card -->
-    <div *ngFor="let icon of iconList | keyvalue" class="card card-small" class="card card-small" style="margin-bottom: 8px;">
+    <div *ngFor="let icon of iconList | iconsfilter: filter" class="card card-small" class="card card-small" style="margin-bottom: 8px;">
       <!-- Icon -->
       <div style="display: flex; flex: 1 1 1; width: 20%; justify-content: center; align-items: center;">
-        <img class="fluent-icons" defaultImage="assets/spinner.gif" [lazyLoad]="icon.value.link" width="24" height="24">
+        <img class="fluent-icons" defaultImage="assets/spinner.gif" [lazyLoad]="icon.link" width="24" height="24">
       </div>
 
       <!-- Info -->
       <div style="display: flex; flex: 4 1 4; flex-direction: column;width: 80%">
         <!-- Title -->
-        <div style="display: flex; width: 100%">{{ icon.key }}</div>
+        <div style="display: flex; width: 100%">{{ icon.name }} ({{ icon.style }})</div>
         <!-- Sizes -->
         <div style="display: flex; width: 100%; justify-content: flex-start; align-items: center;">
-          <span *ngFor="let size of icon.value.sizes" class="circle">{{ size }}</span>
+          <span *ngFor="let size of icon.sizes | keyvalue" class="circle tooltip-container">
+            <div class="tooltip">
+              {{ size.key }}
+              <span> {{ size.value }}</span>
+            </div>
+          </span>
         </div>
       </div>
     </div>

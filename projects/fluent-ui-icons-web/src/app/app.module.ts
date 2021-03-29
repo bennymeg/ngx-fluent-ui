@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { IconsFilterPipe } from './pipes/icons-filter.pipe';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IconsFilterPipe
   ],
   imports: [
     BrowserModule,
-    LazyLoadImageModule
+    LazyLoadImageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

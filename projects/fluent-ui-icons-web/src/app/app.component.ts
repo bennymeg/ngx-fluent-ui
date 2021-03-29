@@ -8,5 +8,10 @@ import iconList from '../assets/icon_list.json';
 })
 export class AppComponent {
   title = 'Fluent UI Icon Library';
-  iconList = iconList;
+  iconList = Object.values(iconList);
+  filter = '';
+
+  updateFilter($event: any) {
+    this.filter = $event.srcElement.value;
+  }
 }
