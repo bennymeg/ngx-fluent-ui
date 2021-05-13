@@ -1,4 +1,5 @@
 import re
+import os
 import json
 import glob
 from urllib.parse import quote
@@ -9,21 +10,25 @@ DEVELOPMENT = True
 FLUENT_UI_MASTER_BRANCH ='https://github.com/microsoft/fluentui-system-icons/raw/master'
 FLUENT_UI_RAW_MASTER_BRANCH = 'https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master' # 2x faster
 
-SOURCE = 'node_modules/@fluentui/svg-icons/icons';
-DESTINATION = 'projects/fluent-ui-icons/icons/svg';
-indexFile = 'projects/fluent-ui-icons/icons/index.ts';
-allFile = 'projects/fluent-ui-icons/icons/all.ts';
+SOURCE = '.\\node_modules\\@fluentui\\svg-icons\\icons';
+DESTINATION = '.\\projects\\fluent-ui-icons\\library\\svg';
+indexFile = '.\\projects\\fluent-ui-icons\\library\\index.ts';
+allFile = '.\\projects\\fluent-ui-icons\\library\\all.ts';
 
 def generate_importable_svg_assets():
-    icon_paths = glob.glob("{}/*.svg".format(SOURCE))
+    icon_paths = glob.glob(os.path.join(SOURCE, '*.svg'))
+    generated_assets_names = []
 
     for path in icon_paths:
         with open(path) as f:
-            icon_name, icon_ext = os.path.splitext(path)
+            icon_name, icon_ext = os.path.splitext(os.path.basename(path))
             markup = f.read()
 
-            with open('{}/{}.ts'.format(DESTINATION, icon_name), "w") as f:
-                f.write("export const {} = '{}';".format(name, markup))
+            with open(os.path.join(DESTINATION, '{}.ts'.format(icon_name)), "w+") as f:
+                f.write("export const {} = '{}';".format(icon_name, markup))
+                generated_assets_names.append(icon_name)
+
+    return generated_assets_names
 
 
 def parse_data(lines, decode=False):
@@ -47,7 +52,7 @@ def parse_data(lines, decode=False):
 
             icons_dict[line_split[0]] = entry
             for size in entry['sizes'].keys():
-                name = "{}_{}_{}".format(entry['name'].lower().replace(' ', '_'), size, entry['style'].lower())
+                name = "{}_{}_{}".format(entry['name'].lower().replace(' ', '_').replace('__', '_'), size, entry['style'].lower())
                 icons_library += "export {{ {} }} from './svg/{}';\n".format(name, name)
         elif '|---|---|---|---|' in line:
             is_table_reached = True
@@ -85,21 +90,31 @@ def load_data():
 
 def store_data(dictionary, library):
     if dictionary is not None:
-        with open('docs/assets/icon_list.json', 'w') as out:
+        with open('docs/assets/icon_list.json', 'w+') as out:
             json_data = json.dumps(dictionary) 
             out.write(json_data)
 
-        with open('projects/fluent-ui-icons-web/src/assets/icon_list.json', 'w') as out:
+        with open('projects/fluent-ui-icons-web/src/assets/icon_list.json', 'w+') as out:
             json_data = json.dumps(dictionary) 
             out.write(json_data)
 
     if library is not None:
-        with open('projects/fluent-ui-icons/library/icons.library.ts', 'w') as out:
+        with open('projects/fluent-ui-icons/library/icons.library.ts', 'w+') as out:
             out.write(library)
 
 
 if __name__ == "__main__":
-    dictionary, library = load_data()
+    library = None
+    local_library = None
+    online_dictionary, online_library = load_data()
 
-    if dictionary is not None or library is not None:
-        store_data(dictionary, library)
+    local_library = generate_importable_svg_assets()
+
+    if local_library is not None:
+        for name in local_library:
+            library += "export {{ {} }} from './svg/{}';\n".format(name, name)
+    else:
+        library = online_library
+
+    if online_dictionary is not None or library is not None:
+        store_data(online_dictionary, library)

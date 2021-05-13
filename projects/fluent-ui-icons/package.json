@@ -1,9 +1,30 @@
 {
-  "name": "fluent-ui-icons",
+  "name": "ngx-fluent-ui-icons",
   "version": "0.0.1",
+  "description": "Fluent UI icons library for angular",
+  "author": "Benny Megidish",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bennymeg/ngx-fluent-ui.git"
+  },
+  "keywords": [
+    "angular",
+    "microsoft",
+    "fluentui",
+    "fluent",
+    "ui",
+    "icons"
+  ],
+  "bugs": {
+    "url": "https://github.com/bennymeg/ngx-fluent-ui/issues"
+  },
+  "homepage": "https://github.com/bennymeg/ngx-fluent-ui#readme",
   "peerDependencies": {
     "@angular/common": "^11.2.6",
-    "@angular/core": "^11.2.6"
+    "@angular/core": "^11.2.6",
+    "@fluentui/svg-icons": "^1.1.113"
   },
   "dependencies": {
     "tslib": "^2.0.0"

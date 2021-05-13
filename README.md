@@ -19,7 +19,7 @@ This package provides the Fluent UI System Icons as optimized plain svg assets.
 npm install ngx-fluent-ui
 ```
 
-
+<!-- https://www.chrisjmendez.com/2017/06/17/angular-dynamically-inserting-svg-into-an-element/ -->
 
 <!-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
