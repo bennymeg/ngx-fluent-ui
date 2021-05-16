@@ -4,9 +4,13 @@ import json
 import glob
 from urllib.parse import quote
 from urllib.request import urlopen
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-p', '--production', action='store_true')
+parsed_args = parser.parse_args()
 
-DEVELOPMENT = True
+DEVELOPMENT = parsed_args.production
 FLUENT_UI_MASTER_BRANCH ='https://github.com/microsoft/fluentui-system-icons/raw/master'
 FLUENT_UI_RAW_MASTER_BRANCH = 'https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master' # 2x faster
 

@@ -19,7 +19,7 @@
 
           - name: index icons                                 # run the indexer python script
             run: |
-              python indexer.py
+              python indexer.py --production
 
           - uses: stefanzweifel/git-auto-commit-action@v4     # commit changes
             with:
