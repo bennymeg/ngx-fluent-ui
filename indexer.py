@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--production', action='store_true')
 parsed_args = parser.parse_args()
 
-DEVELOPMENT = parsed_args.production
+DEVELOPMENT = not parsed_args.production
 FLUENT_UI_MASTER_BRANCH ='https://github.com/microsoft/fluentui-system-icons/raw/master'
 FLUENT_UI_RAW_MASTER_BRANCH = 'https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master' # 2x faster
 
@@ -115,6 +115,7 @@ if __name__ == "__main__":
     local_library = generate_importable_svg_assets()
 
     if local_library is not None:
+        library = ""
         for name in local_library:
             library += "export {{ {} }} from './svg/{}';\n".format(name, name)
     else:
