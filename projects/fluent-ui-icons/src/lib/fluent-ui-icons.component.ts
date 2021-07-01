@@ -1,20 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, Inject, ChangeDetectorRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Icons } from "./fluent-ui-icons.provider";
 
 @Component({
-  selector: 'lib-fluent-ui-icons',
-  template: `
-    <p>
-      fluent-ui-icons works!
-    </p>
-  `,
+  selector: 'fluent-ui-icon, fui',
+  template: `<ng-content></ng-content>`,
   styles: [
+    `:host {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      svg{
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }`
   ]
 })
-export class FluentUiIconsComponent implements OnInit {
+export class FluentUiIconsComponent implements OnChanges  {
+  @Input() name!: string;
 
-  constructor() { }
+  constructor(
+    private elem: ElementRef,
+    private changeDetector: ChangeDetectorRef,
+    @Inject(Icons) private icons: Icons
+  ) {}
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges) {
+    // icons are provided as an array of objects because of "multi: true"
+    const icons = Object.assign({}, ...(this.icons as any as object[]));
+    const svg = icons[changes.name.currentValue] || '';
+
+    if (!svg) {
+      console.warn(`Icon not found: ${changes.name.currentValue}\n`);
+    }
+
+    this.elem.nativeElement.innerHTML = svg;
+    this.changeDetector.markForCheck();
   }
-
 }
