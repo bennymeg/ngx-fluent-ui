@@ -69,26 +69,42 @@ def load_data():
     library = None
     code_map = None
 
-    if (DEVELOPMENT):
-        with open('test/icon_list.md', 'r') as f:
-            dictionary, library = parse_data(f)
-    else:
-        with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/icons.md') as html:
-            lines = html.readlines()
-            dictionary, library = parse_data(lines, decode=True)
+    # if (DEVELOPMENT):
+    #     with open('test/icon_list.md', 'r') as f:
+    #         dictionary, library = parse_data(f)
+    # else:
+    #     with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/icons.md') as html:
+    #         lines = html.readlines()
+    #         dictionary, library = parse_data(lines, decode=True)
 
+
+    print("Loading icons...", end="\t")
+    with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/icons.md') as html:
+        lines = html.readlines()
+        print("Fetched %d icons..." % len(lines), end="\t")
+        
+        dictionary, library = parse_data(lines, decode=True)
+        print("Done!")
+
+    print("Loading filled icons hex code mapping...", end="\t")
     with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/fonts/FluentSystemIcons-Filled.json') as url:
         code_map = json.loads(url.read().decode())
+        print("Done!")
 
+    print("Loading regular icons hex code mapping...", end="\t")
     with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/fonts/FluentSystemIcons-Regular.json') as url:
         code_map.update(json.loads(url.read().decode()))
+        print("Done!")
 
     if (dictionary is not None and code_map is not None):
+        print("Creating icons DB...", end="\t\t\t\t")
         for icon_data in dictionary.values():
             for size, code in icon_data['sizes'].items():
                 key = "ic_fluent_{}_{}_{}".format(icon_data['name'].lower().replace(' ', '_').replace('__', '_'), size, icon_data['style'].lower())
                 if key in code_map:
                     icon_data['sizes'][size] = code_map[key]
+
+        print("Done!")
 
     return dictionary, library
 
@@ -112,14 +128,21 @@ if __name__ == "__main__":
     local_library = None
     online_dictionary, online_library = load_data()
 
+    print("Generating importable SVG assets...", end="\t\t")
     local_library = generate_importable_svg_assets()
+    print("Done!")
 
+    print("Updating icons library...", end="\t\t\t")
     if local_library is not None:
         library = ""
         for name in local_library:
             library += "export {{ {} }} from './svg/{}';\n".format(name, name)
     else:
         library = online_library
+    print("Done!")
+    
 
     if online_dictionary is not None or library is not None:
+        print("Storing all generated assets...", end="\t\t\t")
         store_data(online_dictionary, library)
+        print("Done!")
