@@ -1,0 +1,1 @@
+export const re_order_dots_vertical_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 17a2 2 0 110 4 2 2 0 010-4zm-8 0a2 2 0 110 4 2 2 0 010-4zm8-7a2 2 0 110 4 2 2 0 010-4zm-8 0a2 2 0 110 4 2 2 0 010-4zm8-7a2 2 0 110 4 2 2 0 010-4zM8 3a2 2 0 110 4 2 2 0 010-4z"/></svg>';

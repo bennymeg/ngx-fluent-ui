@@ -1,0 +1,1 @@
+export const text_column_one_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 6a1 1 0 011-1h12a1 1 0 110 2H6a1 1 0 01-1-1z"/><path d="M5 10a1 1 0 011-1h12a1 1 0 110 2H6a1 1 0 01-1-1z"/><path d="M5 14a1 1 0 011-1h12a1 1 0 110 2H6a1 1 0 01-1-1z"/><path d="M5 18a1 1 0 011-1h12a1 1 0 110 2H6a1 1 0 01-1-1z"/></svg>';

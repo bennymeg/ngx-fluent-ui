@@ -1,0 +1,1 @@
+export const prohibited_multiple_16_filled = '<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M7 12A5 5 0 107 2a5 5 0 000 10zm2.95-3.11L5.1 4.05A3.5 3.5 0 019.95 8.9zM8.89 9.95A3.5 3.5 0 014.05 5.1L8.9 9.95zM7 13a6 6 0 005.9-7.14 5 5 0 01-7.03 7.03c.36.07.74.11 1.13.11z"/></svg>';

@@ -1,0 +1,1 @@
+export const table_cells_merge_20_filled = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 17h4.5a2.5 2.5 0 002.5-2.5V14h-7v3z"/><path d="M17 13V7H3v6h14z"/><path d="M3 14h6v3H5.5A2.5 2.5 0 013 14.5V14z"/><path d="M10 6h7v-.5A2.5 2.5 0 0014.5 3H10v3z"/><path d="M9 3v3H3v-.5A2.5 2.5 0 015.5 3H9z"/></svg>';

@@ -1,0 +1,1 @@
+export const comment_12_filled = '<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a2 2 0 00-2 2v4c0 1.1.9 2 2 2v1.5a.5.5 0 00.78.42L6.65 9H9a2 2 0 002-2V3a2 2 0 00-2-2H3z"/></svg>';

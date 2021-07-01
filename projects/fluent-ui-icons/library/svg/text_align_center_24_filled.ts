@@ -1,0 +1,1 @@
+export const text_align_center_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1z"/><path d="M6 18a1 1 0 011-1h10a1 1 0 110 2H7a1 1 0 01-1-1z"/><path d="M3 11a1 1 0 100 2h18a1 1 0 100-2H3z"/></svg>';

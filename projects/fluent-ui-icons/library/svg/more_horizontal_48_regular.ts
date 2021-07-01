@@ -1,0 +1,1 @@
+export const more_horizontal_48_regular = '<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M15.75 24a3.25 3.25 0 11-6.5 0 3.25 3.25 0 016.5 0z"/><path d="M27.25 24a3.25 3.25 0 11-6.5 0 3.25 3.25 0 016.5 0z"/><path d="M35.5 27.25a3.25 3.25 0 100-6.5 3.25 3.25 0 000 6.5z"/></svg>';

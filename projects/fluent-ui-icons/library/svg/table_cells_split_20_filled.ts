@@ -1,0 +1,1 @@
+export const table_cells_split_20_filled = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6h7v-.5A2.5 2.5 0 0014.5 3H10v3z"/><path d="M17 13V7H3v6h14zm-7-5v4H9V8h1z"/><path d="M10 17h4.5a2.5 2.5 0 002.5-2.5V14h-7v3z"/><path d="M9 14H3v.5A2.5 2.5 0 005.5 17H9v-3z"/><path d="M9 6V3H5.5A2.5 2.5 0 003 5.5V6h6z"/></svg>';

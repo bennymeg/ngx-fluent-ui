@@ -1,0 +1,1 @@
+export const block_20_filled = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 110 16 8 8 0 010-16zm3.5 7.5H6.41a.5.5 0 00.09 1h7.09a.5.5 0 00-.09-1z"/></svg>';

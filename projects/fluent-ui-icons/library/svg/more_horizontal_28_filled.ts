@@ -1,0 +1,1 @@
+export const more_horizontal_28_filled = '<svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><path d="M8.75 14a2.75 2.75 0 11-5.5 0 2.75 2.75 0 015.5 0z"/><path d="M16.75 14a2.75 2.75 0 11-5.5 0 2.75 2.75 0 015.5 0z"/><path d="M22 16.75a2.75 2.75 0 100-5.5 2.75 2.75 0 000 5.5z"/></svg>';

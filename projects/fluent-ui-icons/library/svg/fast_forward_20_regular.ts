@@ -1,0 +1,1 @@
+export const fast_forward_20_regular = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 4.5a.5.5 0 01.8-.4L10 8.98V4.5a.5.5 0 01.8-.4l7 5.5a.5.5 0 010 .8l-7 5.5a.5.5 0 01-.8-.4v-4.47l-6.2 4.86a.5.5 0 01-.8-.39v-11zm8 9.97L16.7 10 11 5.53v8.94zm-7 0L9.7 10 4 5.53v8.94z"/></svg>';

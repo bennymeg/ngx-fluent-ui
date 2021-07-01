@@ -1,0 +1,1 @@
+export const more_vertical_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a2 2 0 110-4 2 2 0 010 4z"/><path d="M12 14a2 2 0 110-4 2 2 0 010 4z"/><path d="M10 18a2 2 0 104 0 2 2 0 00-4 0z"/></svg>';

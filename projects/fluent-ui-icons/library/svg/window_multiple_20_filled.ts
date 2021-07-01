@@ -1,0 +1,1 @@
+export const window_multiple_20_filled = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 4.5A2.5 2.5 0 014.5 2h8A2.5 2.5 0 0115 4.5V5H2v-.5z"/><path d="M2 6h13v6.5a2.5 2.5 0 01-2.5 2.5h-8A2.5 2.5 0 012 12.5V6z"/><path d="M7.5 18a2.5 2.5 0 01-2.45-2h7.45a3.5 3.5 0 003.5-3.5V5.05a2.5 2.5 0 012 2.45V14a4 4 0 01-4 4H7.5z"/></svg>';

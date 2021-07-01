@@ -1,0 +1,1 @@
+export const highlight_accent_20_filled = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M16 3h-2v4h1.5a.5.5 0 00.5-.5V3zm-3 4V3H4v3.5c0 .28.22.5.5.5H13zm-6 9.7V11h6v2.07a1 1 0 01-.55.9L7 16.69z"/></svg>';

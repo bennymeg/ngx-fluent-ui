@@ -1,0 +1,1 @@
+export const subtract_12_regular = '<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 6c0-.28.22-.5.5-.5h7a.5.5 0 010 1h-7A.5.5 0 012 6z"/></svg>';

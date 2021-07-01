@@ -1,0 +1,1 @@
+export const emoji_meh_20_regular = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 9.5a1 1 0 100-2 1 1 0 000 2z"/><path d="M13.5 8.5a1 1 0 11-2 0 1 1 0 012 0z"/><path d="M6.5 12a.5.5 0 000 1h7a.5.5 0 000-1h-7z"/><path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-7a7 7 0 100 14 7 7 0 000-14z"/></svg>';
