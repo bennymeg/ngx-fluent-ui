@@ -34,7 +34,7 @@
     "lint:lib": "ng lint fluent-ui-icons",
     "serve:web": "ng serve fluent-ui-icons-web",
     "build:web": "ng build fluent-ui-icons-web --base-href=https://bennymeg.github.io/ngx-fluent-ui/ --prod",
-    "deploy:web": "ng build fluent-ui-icons-web --base-href=https://bennymeg.github.io/ngx-fluent-ui/ --output=docs --prod",
+    "deploy:web": "ng build fluent-ui-icons-web --base-href=https://bennymeg.github.io/ngx-fluent-ui/ --outputPath=docs --prod",
     "test:web": "ng test fluent-ui-icons-web",
     "lint:web": "ng lint fluent-ui-icons-web"
   },
