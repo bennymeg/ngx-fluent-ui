@@ -1,1 +1,1 @@
-export const highlight_accent_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 4h-3v4h2.29c.36-.02.66-.3.7-.65l.01-.1V4zM5.25 8H15V4H4.5v3.25c0 .38.28.7.65.74l.09.01zM9 14h6v2.89a.75.75 0 01-.43.58L9 20.07V14z"/></svg>';
+export const highlight_accent_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4v3.85a.75.75 0 01-.72.65H4.64A.75.75 0 014 7.74V4h16zm-4.5 9.5h-7V21l6.58-3.1c.23-.11.38-.33.42-.58V13.5z"/></svg>';

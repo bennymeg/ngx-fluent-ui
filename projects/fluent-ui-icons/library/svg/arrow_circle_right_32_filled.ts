@@ -1,0 +1,1 @@
+export const arrow_circle_right_32_filled = '<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M2 16a14 14 0 1028 0 14 14 0 00-28 0zm13.3 6.7a1 1 0 010-1.4l4.29-4.3H10a1 1 0 110-2h9.59l-4.3-4.3a1 1 0 011.42-1.4l6 6a1 1 0 010 1.4l-6 6a1 1 0 01-1.42 0z"/></svg>';

@@ -1,0 +1,1 @@
+export const organization_16_filled = '<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 1a2.5 2.5 0 00-.5 4.95V7.5h-2C4.67 7.5 4 8.17 4 9v1.05a2.5 2.5 0 101 0V9c0-.28.22-.5.5-.5h5c.28 0 .5.22.5.5v1.05a2.5 2.5 0 101 0V9c0-.83-.67-1.5-1.5-1.5h-2V5.95A2.5 2.5 0 008 1z"/></svg>';
