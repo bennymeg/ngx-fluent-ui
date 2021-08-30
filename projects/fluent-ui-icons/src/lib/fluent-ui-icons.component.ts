@@ -23,7 +23,7 @@ export class FluentUiIconsComponent implements OnChanges  {
   @Input() name!: string;
 
   constructor(
-    private elem: ElementRef,
+    private element: ElementRef,
     private changeDetector: ChangeDetectorRef,
     @Inject(Icons) private icons: Icons
   ) {}
@@ -37,7 +37,7 @@ export class FluentUiIconsComponent implements OnChanges  {
       console.warn(`Icon not found: ${changes.name.currentValue}\n`);
     }
 
-    this.elem.nativeElement.innerHTML = svg;
+    this.element.nativeElement.innerHTML = svg;
     this.changeDetector.markForCheck();
   }
 }
