@@ -2,32 +2,41 @@
 <div class="toolbar acrylic" role="banner">
   <img width="40" alt="Logo" src="assets/fluent.png"/>
 
-  <span>Fluent UI Icon Library</span>
+  <span class="text-primary">
+    <a href="https://github.com/bennymeg/ngx-fluent-ui">
+      Fluent UI Icon Library
+    </a>
+  </span>
   
   <div class="spacer"></div>
 
-  <mat-form-field>
-    <span matPrefix> </span>
-    <input type="tel" matInput placeholder="Search" name="search" [(ngModel)]="filter">
-    <button matSuffix mat-button>
-      <span class="search-button circle" style="margin-top: 8px" >
+  <mat-form-field style="margin-right: 32px;">
+    <input type="search" matInput placeholder="Search" name="search" [(ngModel)]="searchValue" 
+      (keydown.enter)="applyFilter()" autocomplete="off">
+
+    <button matPrefix mat-icon-button aria-label="Search" (click)="applyFilter()">
+      <span style="margin-right: 2px;">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8.5 3C11.5376 3 14 5.46243 14 8.5C14 9.83879 13.5217 11.0659 12.7266 12.0196L16.8536 16.1464C17.0488 16.3417 17.0488 16.6583 16.8536 16.8536C16.68 17.0271 16.4106 17.0464 16.2157 16.9114L16.1464 16.8536L12.0196 12.7266C11.0659 13.5217 9.83879 14 8.5 14C5.46243 14 3 11.5376 3 8.5C3 5.46243 5.46243 3 8.5 3ZM8.5 4C6.01472 4 4 6.01472 4 8.5C4 10.9853 6.01472 13 8.5 13C10.9853 13 13 10.9853 13 8.5C13 6.01472 10.9853 4 8.5 4Z" fill="#212121"/>
         </svg>
       </span>
     </button>
-  </mat-form-field>
 
-  <div class="input">
-    <input #search type="text" id="input" class="search" placeholder="Search..." 
-      (enter)="updateFilter($event)" (change)="updateFilter($event)">
-  
-    <span class="search-button circle" style="margin-top: 8px" >
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8.5 3C11.5376 3 14 5.46243 14 8.5C14 9.83879 13.5217 11.0659 12.7266 12.0196L16.8536 16.1464C17.0488 16.3417 17.0488 16.6583 16.8536 16.8536C16.68 17.0271 16.4106 17.0464 16.2157 16.9114L16.1464 16.8536L12.0196 12.7266C11.0659 13.5217 9.83879 14 8.5 14C5.46243 14 3 11.5376 3 8.5C3 5.46243 5.46243 3 8.5 3ZM8.5 4C6.01472 4 4 6.01472 4 8.5C4 10.9853 6.01472 13 8.5 13C10.9853 13 13 10.9853 13 8.5C13 6.01472 10.9853 4 8.5 4Z" fill="#212121"/>
+    <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.08859 2.21569L2.14645 2.14645C2.32001 1.97288 2.58944 1.9536 2.78431 2.08859L2.85355 2.14645L6 5.293L9.14645 2.14645C9.34171 1.95118 9.65829 1.95118 9.85355 2.14645C10.0488 2.34171 10.0488 2.65829 9.85355 2.85355L6.707 6L9.85355 9.14645C10.0271 9.32001 10.0464 9.58944 9.91141 9.78431L9.85355 9.85355C9.67999 10.0271 9.41056 10.0464 9.21569 9.91141L9.14645 9.85355L6 6.707L2.85355 9.85355C2.65829 10.0488 2.34171 10.0488 2.14645 9.85355C1.95118 9.65829 1.95118 9.34171 2.14645 9.14645L5.293 6L2.14645 2.85355C1.97288 2.67999 1.9536 2.41056 2.08859 2.21569L2.14645 2.14645L2.08859 2.21569Z" fill="#212121"/>
+        </svg>
+      </span>
+    </button>
+
+    <mat-hint *ngIf="searchValue" align="start">Press Enter to search</mat-hint>
+    <mat-hint *ngIf="searchValue" class="enter-btn" align="end" (click)="applyFilter()">
+      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.76072 12L7.09269 15.136C7.29377 15.3253 7.30336 15.6417 7.1141 15.8428C6.92484 16.0439 6.6084 16.0535 6.40731 15.8642L2.15731 11.8642C2.05692 11.7697 2 11.6379 2 11.5001C2 11.3622 2.05693 11.2304 2.15732 11.136L6.40732 7.13602C6.60841 6.94676 6.92485 6.95635 7.1141 7.15744C7.30336 7.35853 7.29377 7.67497 7.09268 7.86422L3.76086 11L15 11C16.1046 11 17 10.1046 17 9V4.5C17 4.22386 17.2239 4 17.5 4C17.7761 4 18 4.22386 18 4.5V9C18 10.6569 16.6569 12 15 12L3.76072 12Z" fill="#212121"/>
       </svg>
-    </span>
-  </div>
+    </mat-hint>
+  </mat-form-field>
 </div>
 
 <!-- Content -->
