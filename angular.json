@@ -62,7 +62,6 @@
             "main": "projects/fluent-ui-icons-web/src/main.ts",
             "polyfills": "projects/fluent-ui-icons-web/src/polyfills.ts",
             "tsConfig": "projects/fluent-ui-icons-web/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/fluent-ui-icons-web/src/favicon.ico",
               "projects/fluent-ui-icons-web/src/assets"
@@ -70,7 +69,13 @@
             "styles": [
               "projects/fluent-ui-icons-web/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -100,7 +105,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
