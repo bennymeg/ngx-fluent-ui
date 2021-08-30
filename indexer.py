@@ -23,19 +23,19 @@ def generate_importable_svg_assets():
     icon_paths = glob.glob(os.path.join(SOURCE, '*.svg'))
     generated_assets_names = []
 
-    for path in icon_paths:
-        with open(path) as f:
-            icon_name, icon_ext = os.path.splitext(os.path.basename(path))
-            markup = f.read()
 
-            # with open(os.path.join(DESTINATION, '{}.ts'.format(icon_name)), "w+") as f:
-            #     f.write("export const {} = '{}';".format(icon_name, markup))
-            #     generated_assets_names.append(icon_name)
-        
-            if icon_name not in generated_assets_names:
-                with open(allFile, "a+") as f:
-                    f.write("export const {} = '{}';\n".format(icon_name, markup))
-                    generated_assets_names.append(icon_name)
+    with open(allFile, "w+") as out:
+        for path in icon_paths:
+            with open(path) as f:
+                icon_name, icon_ext = os.path.splitext(os.path.basename(path))
+                markup = f.read()
+
+                # with open(os.path.join(DESTINATION, '{}.ts'.format(icon_name)), "w+") as f:
+                #     f.write("export const {} = '{}';".format(icon_name, markup))
+                #     generated_assets_names.append(icon_name)
+            
+                out.write("export const {} = '{}';\n".format(icon_name, markup))
+                generated_assets_names.append(icon_name)
 
     return generated_assets_names
 
