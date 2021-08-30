@@ -1,15 +1,32 @@
+<br/>
 <p align="center">
-    <img src="https://github.com/bennymeg/ngx-fluent-ui/blob/master/docs/assets/logo.png?raw=true" width="128px"> 
+  <a href="https://github.com/bennymeg/ngx-fluent-ui">
+    <img src="https://github.com/bennymeg/ngx-fluent-ui/blob/master/docs/assets/logo.png?raw=true" width="128px" alt="Logo">
+  </a>
+
+  <h3 align="center">NGX Fluent UI</h3>
+
+  <p align="center">
+    Microsoft's Fluent UI icons library for Angular applications
+    <br/>
+    <br/>
+    <img src="https://github.com/bennymeg/ngx-fluent-ui/blob/master/docs/assets/fluent.png?raw=true" width="10px" alt="LIVE Demo">
+    <a href="https://bennymeg.github.io/ngx-fluent-ui/">View Demo</a>
+    .
+    <a href="https://github.com/bennymeg/ngx-fluent-ui/issues">Report Bug</a>
+    .
+    <a href="https://github.com/bennymeg/ngx-fluent-ui/issues">Request Feature</a>
+  </p>
+
+  <br/>
+
+  <div align="center">
+
+  ![License](https://img.shields.io/github/license/bennymeg/ngx-fluent-ui)
+  ![NPM](https://img.shields.io/npm/v/ngx-fluent-ui)
+  
+  </div>
 </p>
-
-<div align="center">
-
-# Angular Fluent UI
-
-This package provides the Fluent UI System Icons as optimized plain svg assets.
-
-**Icon Library**: https://bennymeg.github.io/ngx-fluent-ui/
-</div>
 
 <hr></br>
 
@@ -21,28 +38,57 @@ npm install ngx-fluent-ui
 
 <!-- https://www.chrisjmendez.com/2017/06/17/angular-dynamically-inserting-svg-into-an-element/ -->
 
-<!-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+## Usage
 
-## Development server
+1. Import Fluent UI icon module
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```ts  
+import { NgModule } from '@angular/core';
 
-## Code scaffolding
+import { FluentUiIconsModule } from 'ngx-fluent-ui';
+import { heart_24_filled, heart_24_regular } from 'ngx-fluent-ui/icons';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+  imports: [
+    FluentUiIconsModule.pick({ heart_24_filled, heart_24_regular })
+  ]
+})
+export class AppModule { }
+```
+> **Note:** Only the icons you pick will be bundled in you final build
 
-## Build
+2. Use it in the html template
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```html
+<fluent-ui-icon name="heart_24_filled" class="beat" style="color: red;"></fluent-ui-icon>
+<!-- OR -->
+<fui name="heart_24_regular" class="beat" style="color: red;"></fui>
+```
 
-## Running unit tests
+## Roadmap
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+See the [open issues](https://github.com/bennymeg/ngx-fluent-ui/issues) for a list of proposed features (and known issues).
 
-## Running end-to-end tests
+## Contributing
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/bennymeg/ngx-fluent-ui/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
+* Please make sure you check your spelling and grammar.
+* Create individual PR for each suggestion.
+* Please also read through the [Code Of Conduct](https://github.com/bennymeg/ngx-fluent-ui/blob/master/CODE_OF_CONDUCT.md) before posting your first idea as well.
 
-## Further help
+### Creating A Pull Request
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. -->
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the Apache 2.0 License. See [LICENSE](https://github.com/bennymeg/ngx-fluent-ui/blob/master/LICENSE.md) for more information.
+
+## Authors
+
+* **[Benny Megidish](https://github.com/bennymeg/)**

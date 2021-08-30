@@ -11,7 +11,7 @@ export class FluentUiIconsModule {
   constructor(@Optional() private icons: Icons) {
     if (!this.icons) {
       throw new Error(
-        `No icon provided. Make sure to use 'BootstrapIconsModule.pick({ ... })' when importing the module\n`
+        `No icon provided. Make sure to use 'FluentUiIconsModule.pick({ ... })' when importing the module\n`
       );
     }
   }
