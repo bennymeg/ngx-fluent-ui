@@ -18,13 +18,14 @@ SOURCE = '.\\node_modules\\@fluentui\\svg-icons\\icons';
 DESTINATION = '.\\projects\\fluent-ui-icons\\library\\svg';
 indexFile = '.\\projects\\fluent-ui-icons\\library\\index.ts';
 allFile = '.\\projects\\fluent-ui-icons\\library\\all-icons.library.ts';
+allLibFile = '.\\projects\\fluent-ui-icons\\src\\lib\\fluent-ui-icons.library';
 
 def generate_importable_svg_assets():
     icon_paths = glob.glob(os.path.join(SOURCE, '*.svg'))
     generated_assets_names = []
 
 
-    with open(allFile, "w+") as out:
+    with open(allLibFile, "w+") as out:
         for path in icon_paths:
             with open(path) as f:
                 icon_name, icon_ext = os.path.splitext(os.path.basename(path))

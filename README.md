@@ -33,7 +33,7 @@
 ## Installation
 
 ```bash
-npm install ngx-fluent-ui
+npm install ngx-fluent-ui-icons
 ```
 
 <!-- https://www.chrisjmendez.com/2017/06/17/angular-dynamically-inserting-svg-into-an-element/ -->
@@ -46,7 +46,7 @@ npm install ngx-fluent-ui
 import { NgModule } from '@angular/core';
 
 import { FluentUiIconsModule } from 'ngx-fluent-ui-icons';
-import { heart_24_filled, heart_24_regular } from 'ngx-fluent-ui-icons/library/icons.library';
+import { heart_24_filled, heart_24_regular } from 'ngx-fluent-ui-icons';
 
 @NgModule({
   imports: [
@@ -60,7 +60,7 @@ export class AppModule { }
 2. Use it in the html template
 
 ```html
-<fluent-ui-icon name="heart_24_filled" class="beat" style="color: red;"></fluent-ui-icon>
+<fluent-ui-icon name="heart_24_filled" class="beat" style="fill: red;"></fluent-ui-icon>
 <!-- OR -->
 <fui name="heart_24_regular" class="beat" style="color: red;"></fui>
 ```
