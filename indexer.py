@@ -17,7 +17,7 @@ FLUENT_UI_RAW_MASTER_BRANCH = 'https://raw.githubusercontent.com/microsoft/fluen
 SOURCE = '.\\node_modules\\@fluentui\\svg-icons\\icons';
 DESTINATION = '.\\projects\\fluent-ui-icons\\library\\svg';
 indexFile = '.\\projects\\fluent-ui-icons\\library\\index.ts';
-allFile = '.\\projects\\fluent-ui-icons\\library\\all.ts';
+allFile = '.\\projects\\fluent-ui-icons\\library\\all-icons.library.ts';
 
 def generate_importable_svg_assets():
     icon_paths = glob.glob(os.path.join(SOURCE, '*.svg'))
@@ -28,9 +28,14 @@ def generate_importable_svg_assets():
             icon_name, icon_ext = os.path.splitext(os.path.basename(path))
             markup = f.read()
 
-            with open(os.path.join(DESTINATION, '{}.ts'.format(icon_name)), "w+") as f:
-                f.write("export const {} = '{}';".format(icon_name, markup))
-                generated_assets_names.append(icon_name)
+            # with open(os.path.join(DESTINATION, '{}.ts'.format(icon_name)), "w+") as f:
+            #     f.write("export const {} = '{}';".format(icon_name, markup))
+            #     generated_assets_names.append(icon_name)
+        
+            if icon_name not in generated_assets_names:
+                with open(allFile, "a+") as f:
+                    f.write("export const {} = '{}';\n".format(icon_name, markup))
+                    generated_assets_names.append(icon_name)
 
     return generated_assets_names
 

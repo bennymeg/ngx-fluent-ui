@@ -45,8 +45,8 @@ npm install ngx-fluent-ui
 ```ts  
 import { NgModule } from '@angular/core';
 
-import { FluentUiIconsModule } from 'ngx-fluent-ui';
-import { heart_24_filled, heart_24_regular } from 'ngx-fluent-ui/icons';
+import { FluentUiIconsModule } from 'ngx-fluent-ui-icons';
+import { heart_24_filled, heart_24_regular } from 'ngx-fluent-ui-icons/library/icons.library';
 
 @NgModule({
   imports: [

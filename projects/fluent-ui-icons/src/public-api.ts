@@ -5,3 +5,4 @@
 export * from './lib/fluent-ui-icons.service';
 export * from './lib/fluent-ui-icons.component';
 export * from './lib/fluent-ui-icons.module';
+export * from './lib/all-icons.library';
