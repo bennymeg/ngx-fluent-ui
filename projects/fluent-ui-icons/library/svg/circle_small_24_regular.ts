@@ -1,1 +1,0 @@
-export const circle_small_24_regular = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 9.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM8 12a4 4 0 118 0 4 4 0 01-8 0z"/></svg>';

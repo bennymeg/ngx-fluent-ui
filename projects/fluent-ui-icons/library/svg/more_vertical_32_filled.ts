@@ -1,1 +1,0 @@
-export const more_vertical_32_filled = '<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M13 7a3 3 0 106 0 3 3 0 00-6 0zm0 9a3 3 0 106 0 3 3 0 00-6 0zm0 9a3 3 0 106 0 3 3 0 00-6 0z"/></svg>';

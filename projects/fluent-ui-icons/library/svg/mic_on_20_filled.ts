@@ -1,1 +1,0 @@
-export const mic_on_20_filled = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 10a.5.5 0 00-1 0 5.5 5.5 0 005 5.48v2.02a.5.5 0 001 0v-2.02c2.8-.26 5-2.61 5-5.48a.5.5 0 00-1 0 4.5 4.5 0 11-9 0z"/><path d="M13 10a3 3 0 01-6 0V5a3 3 0 016 0v5z"/></svg>';

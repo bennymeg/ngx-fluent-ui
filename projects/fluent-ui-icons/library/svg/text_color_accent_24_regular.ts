@@ -1,1 +1,0 @@
-export const text_color_accent_24_regular = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 16.75c0-.41.34-.75.75-.75h12.5c.41 0 .75.34.75.75v3c0 .41-.34.75-.75.75H5.25a.75.75 0 01-.75-.75v-3z"/></svg>';

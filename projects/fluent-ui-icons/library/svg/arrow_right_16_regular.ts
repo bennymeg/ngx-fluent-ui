@@ -1,1 +1,0 @@
-export const arrow_right_16_regular = '<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 8.5a.5.5 0 010-1h9.7L8.17 3.87a.5.5 0 11.66-.74l5 4.5a.5.5 0 010 .74l-5 4.5a.5.5 0 11-.66-.74L12.2 8.5H2.5z"/></svg>';

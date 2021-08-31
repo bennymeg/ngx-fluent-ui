@@ -1,1 +1,0 @@
-export const text_align_right_rotate_270_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2a1 1 0 00-1 1v15a1 1 0 102 0V3a1 1 0 00-1-1zm12 0a1 1 0 00-1 1v11a1 1 0 102 0V3a1 1 0 00-1-1zm-7 1a1 1 0 112 0v18a1 1 0 11-2 0V3z"/></svg>';

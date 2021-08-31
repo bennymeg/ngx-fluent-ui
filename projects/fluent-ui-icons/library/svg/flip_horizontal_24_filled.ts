@@ -1,1 +1,0 @@
-export const flip_horizontal_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 17.5a.75.75 0 01-.66-1.1L10.1 4.9a.75.75 0 011.41.35v11.5c0 .41-.34.75-.75.75H4.5z"/><path d="M19.5 17.5a.75.75 0 00.66-1.1L13.9 4.9a.75.75 0 00-1.41.35v11.5c0 .41.34.75.75.75h6.25zm-5-2v-5.33l2.9 5.33h-2.9z"/></svg>';

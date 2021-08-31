@@ -1,1 +1,0 @@
-export const more_vertical_48_filled = '<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 16a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path d="M24 27.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path d="M20.5 35.5a3.5 3.5 0 107 0 3.5 3.5 0 00-7 0z"/></svg>';

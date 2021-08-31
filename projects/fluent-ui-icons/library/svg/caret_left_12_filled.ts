@@ -1,1 +1,0 @@
-export const caret_left_12_filled = '<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.3 3.28A1 1 0 018 4v4.02a1 1 0 01-1.7.7l-2.04-2a1 1 0 010-1.42l2.04-2z"/></svg>';

@@ -1,1 +1,0 @@
-export const notebook_section_20_filled = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M14 2.5a.5.5 0 00-1 0V3H8a2 2 0 00-2 2v10c0 1.1.9 2 2 2h5v.5a.5.5 0 001 0v-15z"/></svg>';

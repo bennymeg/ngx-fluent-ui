@@ -1,1 +1,0 @@
-export const more_horizontal_16_regular = '<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M5 8a1 1 0 11-2 0 1 1 0 012 0z"/><path d="M9 8a1 1 0 11-2 0 1 1 0 012 0z"/><path d="M12 9a1 1 0 100-2 1 1 0 000 2z"/></svg>';

@@ -1,1 +1,0 @@
-export const text_align_justify_24_filled = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a1 1 0 011-1h18a1 1 0 110 2H3a1 1 0 01-1-1z"/><path d="M2 18a1 1 0 011-1h18a1 1 0 110 2H3a1 1 0 01-1-1z"/><path d="M3 11a1 1 0 100 2h18a1 1 0 100-2H3z"/></svg>';

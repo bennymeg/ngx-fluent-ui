@@ -1,1 +1,0 @@
-export const arrow_up_20_filled = '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3.2 8.73a.75.75 0 001.1 1.04l4.95-5.24v12.72a.75.75 0 101.5 0V4.52l4.96 5.25a.75.75 0 101.08-1.04l-6.06-6.41a1 1 0 00-1.46 0L3.21 8.73z"/></svg>';

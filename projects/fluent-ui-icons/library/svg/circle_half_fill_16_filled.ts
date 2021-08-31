@@ -1,1 +1,0 @@
-export const circle_half_fill_16_filled = '<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14 8A6 6 0 112 8a6 6 0 0112 0zM3.5 8h9a4.5 4.5 0 10-9 0z"/></svg>';
