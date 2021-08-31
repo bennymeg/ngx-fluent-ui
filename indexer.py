@@ -4,6 +4,7 @@ import json
 import glob
 from urllib.parse import quote
 from urllib.request import urlopen
+import subprocess
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -14,16 +15,15 @@ DEVELOPMENT = not parsed_args.production
 FLUENT_UI_MASTER_BRANCH ='https://github.com/microsoft/fluentui-system-icons/raw/master'
 FLUENT_UI_RAW_MASTER_BRANCH = 'https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master' # 2x faster
 
-SOURCE = '.\\node_modules\\@fluentui\\svg-icons\\icons';
-DESTINATION = '.\\projects\\fluent-ui-icons\\library\\svg';
-indexFile = '.\\projects\\fluent-ui-icons\\library\\index.ts';
-allFile = '.\\projects\\fluent-ui-icons\\library\\all-icons.library.ts';
-allLibFile = '.\\projects\\fluent-ui-icons\\src\\lib\\fluent-ui-icons.library';
+SOURCE = '.\\node_modules\\@fluentui\\svg-icons\\icons'
+DESTINATION = '.\\projects\\fluent-ui-icons\\library\\svg'
+# indexFile = '.\\projects\\fluent-ui-icons\\library\\index.ts'
+# allFile = '.\\projects\\fluent-ui-icons\\library\\all-icons.library.ts'
+allLibFile = '.\\projects\\fluent-ui-icons\\src\\lib\\fluent-ui-icons.library.ts'
 
 def generate_importable_svg_assets():
     icon_paths = glob.glob(os.path.join(SOURCE, '*.svg'))
     generated_assets_names = []
-
 
     with open(allLibFile, "w+") as out:
         for path in icon_paths:
@@ -40,6 +40,11 @@ def generate_importable_svg_assets():
 
     return generated_assets_names
 
+def update_icons_library_module():
+    cmd = ['npm', 'install', '-D', '@fluentui/svg-icons@latest']
+    result = subprocess.run(cmd, shell=True)
+
+    return result
 
 def parse_data(lines, decode=False):
     is_table_reached = False
@@ -124,15 +129,19 @@ def store_data(dictionary, library):
             json_data = json.dumps(dictionary) 
             out.write(json_data)
 
-    if library is not None:
-        with open('projects/fluent-ui-icons/library/icons.library.ts', 'w+') as out:
-            out.write(library)
+    # if library is not None:
+    #     with open('projects/fluent-ui-icons/library/icons.library.ts', 'w+') as out:
+    #         out.write(library)
 
 
 if __name__ == "__main__":
     library = None
     local_library = None
     online_dictionary, online_library = load_data()
+
+    print("Updateing icons library module...", end="\t\t")
+    result = update_icons_library_module()
+    print("Done!" if result.returncode == 0 else "Failed!")
 
     print("Generating importable SVG assets...", end="\t\t")
     local_library = generate_importable_svg_assets()
