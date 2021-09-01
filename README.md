@@ -23,7 +23,7 @@
   <div align="center">
 
   ![License](https://img.shields.io/github/license/bennymeg/ngx-fluent-ui)
-  ![NPM](https://img.shields.io/npm/v/ngx-fluent-ui)
+  ![NPM](https://img.shields.io/npm/v/ngx-fluent-ui-icons)
   
   </div>
 </p>
