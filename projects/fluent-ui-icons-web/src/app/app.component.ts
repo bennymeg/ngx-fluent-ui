@@ -26,8 +26,8 @@ export class AppComponent {
 
   getIconName(name: string, style: string, size: any) {
     const snakeCaseIconName = name.replace(/[A-Z]/g, (letter, index) => { 
-      return index == 0 ? letter.toLowerCase() : '_'+ letter.toLowerCase();
-    });
+      return index == 0 ? letter.toLowerCase() : '_' + letter.toLowerCase();
+    }).replace(/\s+/, '');
 
     return `${snakeCaseIconName}_${size.key}_${style.toLowerCase()}`;
   }
