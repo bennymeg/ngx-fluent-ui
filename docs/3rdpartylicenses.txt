@@ -88,6 +88,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+ngx-clipboard
+MIT
+
+ngx-window-token
+MIT
+
 rxjs
 Apache-2.0
                                Apache License
