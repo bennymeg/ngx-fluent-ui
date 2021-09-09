@@ -15,11 +15,11 @@ DEVELOPMENT = not parsed_args.production
 FLUENT_UI_MASTER_BRANCH ='https://github.com/microsoft/fluentui-system-icons/raw/master'
 FLUENT_UI_RAW_MASTER_BRANCH = 'https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master' # 2x faster
 
-SOURCE = '.\\node_modules\\@fluentui\\svg-icons\\icons'
-DESTINATION = '.\\projects\\fluent-ui-icons\\library\\svg'
-# indexFile = '.\\projects\\fluent-ui-icons\\library\\index.ts'
-# allFile = '.\\projects\\fluent-ui-icons\\library\\all-icons.library.ts'
-allLibFile = '.\\projects\\fluent-ui-icons\\src\\lib\\fluent-ui-icons.library.ts'
+SOURCE = os.path.join('.', 'node_modules', '@fluentui', 'svg-icons', 'icons')
+DESTINATION = os.path.join('.', 'projects', 'fluent-ui-icons', 'library', 'svg')
+# indexFile = os.path.join('.', 'projects', 'fluent-ui-icons', 'library', 'index.ts')
+# allFile = os.path.join('.', 'projects', 'fluent-ui-icons', 'library', 'all-icons.library.ts')
+allLibFile = os.path.join('.', 'projects', 'fluent-ui-icons', 'src', 'lib', 'fluent-ui-icons.library.ts')
 
 def generate_importable_svg_assets():
     icon_paths = glob.glob(os.path.join(SOURCE, '*.svg'))
