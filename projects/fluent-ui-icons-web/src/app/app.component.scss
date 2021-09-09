@@ -58,6 +58,8 @@ p {
   font-size: small;
   font-weight: 300;
   padding: 12px 4px;
+  display: flex;
+  align-items: center;
 }
 
 .footer span {
@@ -329,4 +331,34 @@ svg#clouds {
     display: none;
     visibility: hidden;
   }
+}
+
+.social {
+  padding-right: 12px;
+}
+
+.github-btn {
+  color: black;
+  -o-transition:color .18s ease-in-out;
+  -ms-transition:color .18s ease-in-out;
+  -moz-transition:color .18s ease-in-out;
+  -webkit-transition:color .18s ease-in-out;
+  transition:color .18s ease-in-out;
+}
+
+.github-btn:hover { 
+    color: #6e5494;
+}
+
+.npm-btn {
+    color: black;
+    -o-transition:color .18s ease-in-out;
+    -ms-transition:color .18s ease-in-out;
+    -moz-transition:color .18s ease-in-out;
+    -webkit-transition:color .18s ease-in-out;
+    transition:color .18s ease-in-out;
+}
+  
+.npm-btn:hover { 
+    color: #cb3837;
 }

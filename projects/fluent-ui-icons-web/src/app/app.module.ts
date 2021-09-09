@@ -10,6 +10,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ClipboardModule } from 'ngx-clipboard';
 import { IconsFilterPipe } from './pipes/icons-filter.pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 
@@ -28,6 +29,7 @@ import { AppComponent } from './app.component';
     MatSnackBarModule,
     ClipboardModule,
     LazyLoadImageModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

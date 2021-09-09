@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { faGithub, faNpm, faAngular } from '@fortawesome/free-brands-svg-icons';
 import iconList from '../assets/icon_list.json';
 
 @Component({
@@ -12,6 +13,9 @@ export class AppComponent {
   iconList = Object.values(iconList);
   searchValue = '';
   filter = '';
+  faGithub = faGithub;
+  faNpm = faNpm;
+  faAngular = faAngular;
 
   constructor(private _snackBar: MatSnackBar) {}
 
