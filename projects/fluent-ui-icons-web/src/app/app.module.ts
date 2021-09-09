@@ -6,7 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ClipboardModule } from 'ngx-clipboard';
 import { IconsFilterPipe } from './pipes/icons-filter.pipe';
 
 import { AppComponent } from './app.component';
@@ -23,6 +25,8 @@ import { AppComponent } from './app.component';
     MatTooltipModule,
     MatInputModule,
     MatButtonModule,
+    MatSnackBarModule,
+    ClipboardModule,
     LazyLoadImageModule,
   ],
   providers: [],

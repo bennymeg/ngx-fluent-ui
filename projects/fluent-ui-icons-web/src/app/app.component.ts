@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import iconList from '../assets/icon_list.json';
 
 @Component({
@@ -12,6 +13,8 @@ export class AppComponent {
   searchValue = '';
   filter = '';
 
+  constructor(private _snackBar: MatSnackBar) {}
+
   applyFilter() {
     this.filter = this.searchValue;
   }
@@ -19,5 +22,17 @@ export class AppComponent {
   clearFilter() {
     this.searchValue = '';
     this.applyFilter();
+  }
+
+  getIconName(name: string, style: string, size: any) {
+    const snakeCaseIconName = name.replace(/[A-Z]/g, (letter, index) => { 
+      return index == 0 ? letter.toLowerCase() : '_'+ letter.toLowerCase();
+    });
+
+    return `${snakeCaseIconName}_${size.key}_${style.toLowerCase()}`;
+  }
+
+  showCopiesBanner(size?: any) {
+    this._snackBar.open("Copied!", size ? size.value : '', { duration: 3000 });
   }
 }

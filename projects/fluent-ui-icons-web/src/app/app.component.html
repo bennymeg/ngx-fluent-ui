@@ -56,7 +56,8 @@
         <!-- Sizes -->
         <div style="display: flex; width: 100%; justify-content: flex-start; align-items: center;">
           <span *ngFor="let size of icon.sizes | keyvalue" class="circle tooltip-container">
-            <div class="tooltip" matTooltip="{{size.value}}" matTooltipPosition="after">
+            <div ngxClipboard class="tooltip" matTooltip="{{size.value}}" matTooltipPosition="after"
+              (cbOnSuccess)="showCopiesBanner(size)" [cbContent]="getIconName(icon.name, icon.style, size)">
               {{ size.key }}
               <!-- <span> {{ size.value }}</span> -->
             </div>
