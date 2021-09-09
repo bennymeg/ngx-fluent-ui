@@ -55,7 +55,7 @@ import { heart_24_filled, heart_24_regular } from 'ngx-fluent-ui-icons';
 })
 export class AppModule { }
 ```
-> **Note:** Only the icons you pick will be bundled in you final build
+> **Note:** Only the icons you pick will be bundled in the final build
 
 2. Use it in the html template
 
