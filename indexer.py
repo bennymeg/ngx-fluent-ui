@@ -89,12 +89,22 @@ def load_data():
     #         dictionary, library = parse_data(lines, decode=True)
 
 
-    print("Loading icons...", end="\t")
-    with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/icons.md') as html:
+    print("Loading filled icons...", end="\t")
+    with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/icons_filled.md') as html:
         lines = html.readlines()
         print("Fetched %d icons..." % len(lines), end="\t")
         
         dictionary, library = parse_data(lines, decode=True)
+        print("Done!")
+        
+    print("Loading regular icons...", end="\t")
+    with urlopen('https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/icons_regular.md') as html:
+        lines = html.readlines()
+        print("Fetched %d icons..." % len(lines), end="\t")
+        
+        temp_dictionary, temp_library = parse_data(lines, decode=True)
+        dictionary.update(temp_dictionary)
+        library.update(temp_library)
         print("Done!")
 
     print("Loading filled icons hex code mapping...", end="\t")
