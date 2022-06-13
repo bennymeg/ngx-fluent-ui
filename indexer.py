@@ -46,7 +46,7 @@ def update_icons_library_module():
 
     return result
 
-def parse_data(lines, decode=False):
+def parse_data(lines, style=None, decode=False):
     is_table_reached = False
     icons_dict = dict()
     icons_library = ''
@@ -61,7 +61,7 @@ def parse_data(lines, decode=False):
             entry = dict()
 
             entry['name'] = name_split[0]
-            entry['style'] = name_split[1].strip(')')
+            entry['style'] = style if style is not None else name_split[1].strip(')')
             entry['link'] = "{}/{}".format(FLUENT_UI_RAW_MASTER_BRANCH, line_split[1].split("\"")[1].replace(' ', '%20'))
             entry['sizes'] = {re.sub(r'_[rf]', '', size): '' for size in re.findall(r"\d\d_[rf]", line_split[3])}
 
@@ -94,7 +94,7 @@ def load_data():
         lines = html.readlines()
         print("Fetched %d icons..." % len(lines), end="\t")
         
-        dictionary, library = parse_data(lines, decode=True)
+        dictionary, library = parse_data(lines, 'Filled', decode=True)
         print("Done!")
         
     print("Loading regular icons...", end="\t")
@@ -102,9 +102,9 @@ def load_data():
         lines = html.readlines()
         print("Fetched %d icons..." % len(lines), end="\t")
         
-        temp_dictionary, temp_library = parse_data(lines, decode=True)
+        temp_dictionary, temp_library = parse_data(lines, 'Regular', decode=True)
         dictionary.update(temp_dictionary)
-        library.update(temp_library)
+        library += temp_library
         print("Done!")
 
     print("Loading filled icons hex code mapping...", end="\t")
