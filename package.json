@@ -65,7 +65,7 @@
     "@angular-devkit/build-angular": "12.2.3",
     "@angular/cli": "^12.2.3",
     "@angular/compiler-cli": "^12.2.3",
-    "@fluentui/svg-icons": "^1.1.137",
+    "@fluentui/svg-icons": "^1.1.172",
     "@types/jasmine": "^3.8.2",
     "@types/node": "^12.20.21",
     "angular-cli-ghpages": "^1.0.0-rc.2",
