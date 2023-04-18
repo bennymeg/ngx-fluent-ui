@@ -43,4 +43,4 @@
           - uses: gautamkrishnar/keepalive-workflow@v1
             with:
                 committer_username: Benny Bot
-                commiter_email: bennymegk@gmail.com
+                committer_email: bennymegk@gmail.com
