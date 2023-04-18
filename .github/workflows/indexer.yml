@@ -39,3 +39,8 @@
               commit_user_name: Benny Bot
               commit_user_email: bennymegk@gmail.com
               commit_author: bennymeg <bennymegk@gmail.com>
+              
+          - uses: gautamkrishnar/keepalive-workflow@v1
+            with:
+                committer_username: Benny Bot
+                commiter_email: bennymegk@gmail.com
