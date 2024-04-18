@@ -24,7 +24,7 @@
   "peerDependencies": {
     "@angular/common": ">=11",
     "@angular/core": ">=11",
-    "@fluentui/svg-icons": "^1.1.113"
+    "@fluentui/svg-icons": "^1.1.235"
   },
   "dependencies": {
     "tslib": "^2.0.0"
