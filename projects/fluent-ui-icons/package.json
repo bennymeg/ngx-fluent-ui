@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/bennymeg/ngx-fluent-ui#readme",
   "peerDependencies": {
-    "@angular/common": "^11.2.6",
-    "@angular/core": "^11.2.6",
+    "@angular/common": ">=11",
+    "@angular/core": ">=11",
     "@fluentui/svg-icons": "^1.1.113"
   },
   "dependencies": {
