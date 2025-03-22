@@ -149,7 +149,7 @@ if __name__ == "__main__":
     local_library = None
     online_dictionary, online_library = load_data()
 
-    print("Updateing icons library module...", end="\t\t")
+    print("Updating icons library module...", end="\t\t")
     result = update_icons_library_module()
     print("Done!" if result.returncode == 0 else "Failed!")
 
