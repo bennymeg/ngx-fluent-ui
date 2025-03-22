@@ -27,7 +27,7 @@
             run: npm install --force
 
           - name: update fluent ui icons dependency             # install latest fluent ui dependency
-            run: npm install -D @fluentui/svg-icons@latest
+            run: npm install -D @fluentui/svg-icons@latest --force
 
           - name: index icons                                   # run icon indexer python script
             run: |
