@@ -12,7 +12,8 @@ import { Icons } from "./fluent-ui-icons.provider";
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
-      svg{
+
+      svg {
         width: 100% !important;
         height: 100% !important;
       }
