@@ -24,7 +24,7 @@
               python-version: '3.9'                             
 
           - name: install dependencies                          # install dependencies
-            run: npm install
+            run: npm install --force
 
           - name: update fluent ui icons dependency             # install latest fluent ui dependency
             run: npm install -D @fluentui/svg-icons@latest
