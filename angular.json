@@ -28,18 +28,6 @@
             "tsConfig": "projects/fluent-ui-icons/tsconfig.spec.json",
             "karmaConfig": "projects/fluent-ui-icons/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/fluent-ui-icons/tsconfig.lib.json",
-              "projects/fluent-ui-icons/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     },
@@ -140,19 +128,6 @@
               "projects/fluent-ui-icons-web/src/styles.scss"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/fluent-ui-icons-web/tsconfig.app.json",
-              "projects/fluent-ui-icons-web/tsconfig.spec.json",
-              "projects/fluent-ui-icons-web/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {
