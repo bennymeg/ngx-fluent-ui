@@ -3,7 +3,7 @@
     on:
       workflow_dispatch:
       schedule:
-        - cron: "0 0 1 * *"                                   # runs at 12:00AM UTC every month
+        - cron: "0 0 * * 0"                                     # runs at 12:00AM UTC every Sunday
     
     jobs:
       fluent-ui-icons-indexer:
@@ -16,12 +16,12 @@
           - name: setup node                                    # install node
             uses: actions/setup-node@v2                         
             with:
-              node-version: '16'
+              node-version: '18'
 
           - name: setup python                                  # install python
             uses: actions/setup-python@v2
             with:
-              python-version: '3.8'                             
+              python-version: '3.9'                             
 
           - name: install dependencies                          # install dependencies
             run: npm install
