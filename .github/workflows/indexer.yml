@@ -44,8 +44,8 @@
               commit_user_email: bennymegk@gmail.com
               commit_author: bennymeg <bennymegk@gmail.com>
               
-          - name: assert workflow active                        # keep workflow alive (if needed)
-            uses: gautamkrishnar/keepalive-workflow@v1
-            with:
-                committer_username: Benny Bot
-                committer_email: bennymegk@gmail.com
+          # - name: assert workflow active                        # keep workflow alive (if needed)
+          #   uses: gautamkrishnar/keepalive-workflow@v1
+          #   with:
+          #       committer_username: Benny Bot
+          #       committer_email: bennymegk@gmail.com
